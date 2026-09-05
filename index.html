@@ -4,9 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For Prerna Didi 💗</title>
+<title>For Prerna Didi ♡</title>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Playfair+Display:wght@500;600&display=swap');
 
 *{
     margin:0;
@@ -15,160 +17,224 @@
 }
 
 body{
-    font-family: Georgia, "Times New Roman", serif;
-    background:#fff7ef;
-    color:#603846;
+    background:#fdf4ed;
+    color:#633b49;
     overflow:hidden;
+    font-family:'Playfair Display',serif;
 }
 
-/* PAGE */
+/* ================= BACKGROUND ================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+      radial-gradient(circle at 10% 15%,#f7d9df 0 2%,transparent 3%),
+      radial-gradient(circle at 90% 20%,#f4d8c7 0 2%,transparent 3%),
+      radial-gradient(circle at 15% 85%,#efd4df 0 2%,transparent 3%),
+      radial-gradient(circle at 85% 80%,#f5dccb 0 2%,transparent 3%);
+    pointer-events:none;
+}
+
+/* ================= PAGE ================= */
 
 .page{
-    width:100%;
-    height:100vh;
     display:none;
+    height:100vh;
+    width:100%;
     align-items:center;
     justify-content:center;
     padding:20px;
-    text-align:center;
     position:relative;
+    text-align:center;
 }
 
 .page.active{
     display:flex;
-    animation:pageIn .8s ease;
+    animation:appear .8s ease;
 }
 
-@keyframes pageIn{
+@keyframes appear{
     from{
         opacity:0;
-        transform:translateY(20px);
+        transform:scale(.96);
     }
     to{
         opacity:1;
-        transform:translateY(0);
+        transform:scale(1);
     }
 }
 
-/* CARD */
+/* ================= CARD ================= */
 
 .card{
-    width:min(92%,520px);
+    width:min(94%,540px);
+    max-height:92vh;
+    overflow:auto;
+
     background:#fffdf9;
-    border:2px solid #e8c9bb;
-    border-radius:28px;
-    padding:34px 24px;
-    box-shadow:0 15px 45px rgba(90,50,60,.13);
+
+    border:1px solid #e7c8bc;
+
+    border-radius:30px;
+
+    padding:38px 28px;
+
+    box-shadow:
+        0 20px 50px rgba(99,59,73,.12);
+
     position:relative;
 }
 
-.subtitle{
-    color:#a45d72;
+.card::-webkit-scrollbar{
+    display:none;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    inset:9px;
+
+    border:1px dashed #e6c5b9;
+
+    border-radius:23px;
+
+    pointer-events:none;
+}
+
+/* ================= TEXT ================= */
+
+.small{
     font-size:12px;
     letter-spacing:3px;
     text-transform:uppercase;
-    margin-bottom:12px;
+    color:#ae6a7d;
+    margin-bottom:13px;
 }
 
 h1{
-    font-size:34px;
-    margin-bottom:15px;
+    font-size:36px;
+    line-height:1.25;
+    margin-bottom:14px;
 }
 
 h2{
-    font-size:26px;
-    margin-bottom:15px;
+    font-size:27px;
+    line-height:1.35;
+    margin-bottom:16px;
 }
 
 p{
-    font-size:17px;
-    line-height:1.8;
+    font-size:16px;
+    line-height:1.85;
 }
 
-/* FLOATING DECOR */
+.hand{
+    font-family:'Caveat',cursive;
+    font-size:25px;
+}
 
-.decor{
+/* ================= BUTTON ================= */
+
+button{
+    border:none;
+    background:#9a536b;
+    color:white;
+
+    padding:13px 28px;
+
+    border-radius:50px;
+
+    font-family:'Playfair Display',serif;
+    font-size:14px;
+
+    cursor:pointer;
+
+    margin-top:25px;
+
+    box-shadow:0 8px 18px rgba(154,83,107,.22);
+
+    transition:.25s;
+}
+
+button:hover{
+    transform:translateY(-3px);
+}
+
+/* ================= FLOATING FLOWERS ================= */
+
+.flower{
     position:absolute;
     font-size:25px;
-    opacity:.7;
+    opacity:.75;
+
     animation:float 4s ease-in-out infinite;
 }
 
-.d1{
-    top:8%;
-    left:8%;
-}
-
-.d2{
-    top:13%;
-    right:9%;
-    animation-delay:1s;
-}
-
-.d3{
-    bottom:10%;
-    left:9%;
-    animation-delay:2s;
-}
-
-.d4{
-    bottom:8%;
-    right:10%;
-    animation-delay:1.5s;
-}
+.f1{top:7%;left:7%}
+.f2{top:11%;right:7%;animation-delay:1s}
+.f3{bottom:9%;left:8%;animation-delay:2s}
+.f4{bottom:7%;right:8%;animation-delay:1.5s}
 
 @keyframes float{
     50%{
-        transform:translateY(-12px) rotate(5deg);
+        transform:translateY(-12px) rotate(7deg);
     }
 }
 
-/* ENVELOPE */
+/* ================= ENVELOPE ================= */
 
 .envelope-area{
-    width:240px;
-    height:165px;
-    margin:32px auto 12px;
+    width:250px;
+    height:175px;
+    margin:30px auto 5px;
     cursor:pointer;
-    perspective:900px;
 }
 
 .envelope{
-    width:240px;
-    height:160px;
-    background:#d9899b;
-    border-radius:8px;
+    width:250px;
+    height:165px;
+    background:#d88b9c;
+    border-radius:10px;
     position:relative;
-    box-shadow:0 12px 25px rgba(80,40,50,.18);
+
+    box-shadow:0 14px 30px rgba(99,59,73,.17);
 }
 
 .envelope-front{
     position:absolute;
     inset:0;
-    background:#d9899b;
-    clip-path:polygon(
-        0 0,
-        50% 55%,
-        100% 0,
-        100% 100%,
-        0 100%
-    );
+
+    background:#d88b9c;
+
+    clip-path:
+        polygon(
+            0 0,
+            50% 58%,
+            100% 0,
+            100% 100%,
+            0 100%
+        );
+
     z-index:3;
 }
 
 .flap{
     position:absolute;
+
     top:0;
     left:0;
 
     width:0;
     height:0;
 
-    border-left:120px solid transparent;
-    border-right:120px solid transparent;
-    border-top:85px solid #efb3be;
+    border-left:125px solid transparent;
+    border-right:125px solid transparent;
+    border-top:90px solid #efb4bf;
 
     transform-origin:top;
+
     transition:1s;
 
     z-index:5;
@@ -181,18 +247,20 @@ p{
 .letter{
     position:absolute;
 
-    width:200px;
+    width:205px;
     height:125px;
 
-    left:20px;
-    top:20px;
+    top:18px;
+    left:22px;
 
     background:#fffdf7;
-    border-radius:6px;
+
+    border-radius:7px;
 
     padding:15px;
 
-    font-size:14px;
+    font-family:'Caveat',cursive;
+    font-size:20px;
 
     z-index:1;
 
@@ -203,81 +271,140 @@ p{
     transform:translateY(-105px);
 }
 
-/* BUTTON */
+/* ================= LETTER ================= */
 
-button{
-    border:0;
-    background:#91465e;
-    color:white;
+.note{
+    background:#fff5f1;
 
-    padding:13px 28px;
+    border-radius:22px;
 
-    border-radius:30px;
-
-    font-size:15px;
-
-    margin-top:24px;
-
-    cursor:pointer;
-
-    transition:.25s;
-}
-
-button:hover{
-    transform:scale(1.05);
-}
-
-/* LETTER */
-
-.letter-box{
-    background:#fff4f1;
-
-    border:1px dashed #c88998;
-
-    border-radius:18px;
-
-    padding:20px;
+    padding:22px;
 
     text-align:left;
 
-    min-height:220px;
+    border:1px solid #efd4ca;
 
-    line-height:1.8;
-
-    font-size:16px;
+    position:relative;
 }
 
-/* BALLOONS */
+.note::before{
+    content:"♡";
+
+    position:absolute;
+
+    right:16px;
+    top:8px;
+
+    font-size:28px;
+
+    color:#d58c9f;
+}
+
+.note p{
+    font-family:'Caveat',cursive;
+    font-size:23px;
+    line-height:1.5;
+}
+
+/* ================= BALLOON AREA ================= */
+
+.balloon-area{
+
+    margin:22px auto;
+
+    padding:25px 15px 30px;
+
+    background:
+        radial-gradient(circle at 20% 20%,#ffe8ec 0 3%,transparent 4%),
+        radial-gradient(circle at 80% 30%,#ffe4d7 0 3%,transparent 4%),
+        radial-gradient(circle at 50% 80%,#f6dfeb 0 3%,transparent 4%),
+        #fff4ef;
+
+    border-radius:25px;
+
+    border:1px dashed #dba8a9;
+
+    position:relative;
+
+    min-height:300px;
+}
+
+/* little decorative stars */
+
+.star{
+    position:absolute;
+    color:#c78395;
+    font-size:20px;
+    animation:twinkle 2s infinite;
+}
+
+.s1{top:15px;left:20px}
+.s2{top:25px;right:25px;animation-delay:.5s}
+.s3{bottom:20px;left:30px;animation-delay:1s}
+.s4{bottom:15px;right:25px;animation-delay:1.5s}
+
+@keyframes twinkle{
+    50%{
+        opacity:.3;
+        transform:scale(.7);
+    }
+}
+
+/* balloons */
 
 .balloons{
     display:flex;
+
     justify-content:center;
+    align-items:flex-end;
+
     flex-wrap:wrap;
 
-    gap:18px;
+    gap:15px;
 
-    max-width:390px;
-
-    margin:30px auto 15px;
+    padding:20px 5px 35px;
 }
 
 .balloon{
-    width:62px;
-    height:78px;
+    width:60px;
+    height:76px;
 
-    border-radius:50%;
+    border-radius:50% 50% 48% 48%;
 
     position:relative;
 
     cursor:pointer;
 
-    box-shadow:0 7px 15px rgba(80,40,50,.15);
+    box-shadow:
+        inset -7px -9px 12px rgba(0,0,0,.08),
+        0 8px 15px rgba(99,59,73,.12);
 
     transition:.25s;
 }
 
+.balloon:nth-child(2),
+.balloon:nth-child(4){
+    transform:translateY(15px);
+}
+
 .balloon:hover{
-    transform:translateY(-8px);
+    transform:translateY(-8px) scale(1.05);
+}
+
+.balloon::before{
+    content:"";
+
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    background:inherit;
+
+    bottom:-4px;
+    left:25px;
+
+    transform:rotate(45deg);
 }
 
 .balloon::after{
@@ -286,33 +413,20 @@ button:hover{
     position:absolute;
 
     width:1px;
-    height:43px;
+    height:48px;
 
-    background:#9b6975;
+    background:#9e6d78;
 
     left:50%;
-    bottom:-41px;
+
+    bottom:-49px;
 }
 
-.pink{
-    background:#e5a0ae;
-}
-
-.peach{
-    background:#e8b38e;
-}
-
-.rose{
-    background:#c98198;
-}
-
-.lilac{
-    background:#b998ae;
-}
-
-.cream{
-    background:#e7c8a5;
-}
+.b1{background:#e8a3b1}
+.b2{background:#edbd9e}
+.b3{background:#c991a7}
+.b4{background:#e2b4c3}
+.b5{background:#e8c99f}
 
 .pop{
     animation:pop .4s forwards;
@@ -330,44 +444,62 @@ button:hover{
     }
 }
 
-.balloon-message{
+.message{
+
     display:none;
 
-    background:#fff0f3;
+    background:#fffdf9;
 
-    border-radius:17px;
+    padding:17px;
 
-    padding:15px;
+    border-radius:18px;
 
-    font-size:16px;
+    border:1px solid #e6c5bd;
 
-    line-height:1.7;
+    font-family:'Caveat',cursive;
 
-    margin-top:20px;
+    font-size:22px;
+
+    line-height:1.4;
+
+    animation:messageIn .4s ease;
 }
 
-/* BIRTHDAY */
+@keyframes messageIn{
+
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ================= CAKE ================= */
 
 .cake{
-    font-size:85px;
+    font-size:90px;
+    margin:10px;
 
-    margin:15px;
-
-    animation:bounce 1.5s infinite;
+    animation:cake 1.5s infinite;
 }
 
-@keyframes bounce{
+@keyframes cake{
 
     50%{
-        transform:translateY(-9px);
+        transform:translateY(-8px) rotate(2deg);
     }
+
 }
 
-/* CONFETTI */
+/* ================= CONFETTI ================= */
 
 .confetti{
     position:absolute;
-
     top:-30px;
 
     font-size:22px;
@@ -385,15 +517,15 @@ button:hover{
 
 }
 
-/* FINAL */
+/* ================= FINAL ================= */
 
 .big-heart{
     font-size:70px;
 
-    animation:heart 1.3s infinite;
+    animation:heartbeat 1.3s infinite;
 }
 
-@keyframes heart{
+@keyframes heartbeat{
 
     50%{
         transform:scale(1.15);
@@ -404,9 +536,11 @@ button:hover{
 .signature{
     margin-top:22px;
 
-    font-size:14px;
+    font-family:'Caveat',cursive;
 
-    color:#996274;
+    font-size:24px;
+
+    color:#9d6275;
 }
 
 @media(max-width:450px){
@@ -419,12 +553,12 @@ button:hover{
         font-size:23px;
     }
 
-    p{
-        font-size:16px;
+    .card{
+        padding:32px 20px;
     }
 
-    .card{
-        padding:28px 19px;
+    .balloon-area{
+        min-height:310px;
     }
 
 }
@@ -436,30 +570,28 @@ button:hover{
 <body>
 
 
-<!-- PAGE 1 -->
+<!-- ================= PAGE 1 ================= -->
 
 <section class="page active" id="page1">
 
-<div class="decor d1">🌷</div>
-<div class="decor d2">🌸</div>
-<div class="decor d3">🌼</div>
-<div class="decor d4">✨</div>
-
+<div class="flower f1">🌷</div>
+<div class="flower f2">🌸</div>
+<div class="flower f3">🌼</div>
+<div class="flower f4">✨</div>
 
 <div class="card">
 
-<div class="subtitle">
+<div class="small">
 A little surprise
 </div>
 
 <h1>
-For Prerna Didi 💗
+For Prerna Didi ♡
 </h1>
 
 <p>
-Today is a little extra special... 👀
-<br>
-Because we have <b>two reasons</b> to celebrate!
+A tiny surprise for someone
+who deserves a little extra happiness today... 🌷
 </p>
 
 
@@ -468,9 +600,8 @@ Because we have <b>two reasons</b> to celebrate!
 <div class="envelope" id="envelope">
 
 <div class="letter">
-💌<br><br>
-A tiny surprise,
-just for you...
+For you, Didi ♡<br>
+with a little love & lots of wishes...
 </div>
 
 <div class="flap"></div>
@@ -482,14 +613,9 @@ just for you...
 </div>
 
 
-<p style="font-size:14px;">
-Tap the envelope 💌
+<p class="hand">
+Tap the envelope to open it 💌
 </p>
-
-
-<button onclick="openEnvelope()">
-Open your surprise ✨
-</button>
 
 </div>
 
@@ -497,29 +623,31 @@ Open your surprise ✨
 
 
 
-<!-- PAGE 2 -->
+<!-- ================= PAGE 2 ================= -->
 
 <section class="page" id="page2">
 
-<div class="decor d1">🌸</div>
-<div class="decor d2">💗</div>
+<div class="flower f1">🌸</div>
+<div class="flower f2">♡</div>
 
 <div class="card">
 
-<div class="subtitle">
-Dear Prerna Didi
+<div class="small">
+A note for you
 </div>
 
 <h2>
-A little thank-you 🌷
+Dear Prerna Didi 🌷
 </h2>
 
+<div class="note">
 
-<div class="letter-box" id="typing"></div>
+<p id="typing"></p>
 
+</div>
 
 <button onclick="nextPage()">
-There's more... ✨
+A little something fun 🎈
 </button>
 
 </div>
@@ -528,66 +656,70 @@ There's more... ✨
 
 
 
-<!-- PAGE 3 -->
+<!-- ================= PAGE 3 ================= -->
 
 <section class="page" id="page3">
 
 <div class="card">
 
-<div class="subtitle">
-Tiny surprise game 🎈
+<div class="small">
+Just for you
 </div>
 
 <h2>
-Pop the balloons!
+A few little things I wanted to say 💗
 </h2>
 
-<p>
-Each balloon has something I wanted to say. 💕
-<br>
-Tap them!
+<p class="hand">
+Pop the balloons and discover them ✨
 </p>
+
+
+<div class="balloon-area">
+
+<div class="star s1">✦</div>
+<div class="star s2">✧</div>
+<div class="star s3">♡</div>
+<div class="star s4">✦</div>
 
 
 <div class="balloons">
 
-<div class="balloon pink"
+<div class="balloon b1"
 onclick="popBalloon(this,
-'Thank you for explaining things patiently, even when I do not understand them the first time. 😭📚')">
+'Thank you for always being patient with me. You explain things so nicely. 🌷')">
 </div>
 
-
-<div class="balloon peach"
+<div class="balloon b2"
 onclick="popBalloon(this,
-'You somehow manage to make studying feel a little less stressful. 🌸')">
+'You have a way of making even difficult things feel a little easier. ♡')">
 </div>
 
-
-<div class="balloon rose"
+<div class="balloon b3"
 onclick="popBalloon(this,
-'Thank you for always encouraging me to do better. 💗')">
+'Thank you for always encouraging me and believing that I can do better. ✨')">
 </div>
 
-
-<div class="balloon lilac"
+<div class="balloon b4"
 onclick="popBalloon(this,
-'Tuition classes would definitely not be the same without you, Didi! ✨')">
+'You are genuinely someone I am lucky to have as my teacher. 💗')">
 </div>
 
-
-<div class="balloon cream"
+<div class="balloon b5"
 onclick="popBalloon(this,
-'And today, you deserve a day full of happiness, smiles and cake! 🎂')">
+'And today... I hope you get all the happiness you deserve! 🌸')">
 </div>
 
 </div>
 
 
-<div class="balloon-message" id="balloonMessage"></div>
+<div class="message" id="message"></div>
+
+</div>
 
 
 <button onclick="nextPage()">
-Okay... now the birthday part 🎂
+Wait... there's another surprise 🎂
 </button>
 
 </div>
@@ -596,45 +728,22 @@ Okay... now the birthday part 🎂
 
 
 
-<!-- PAGE 4 -->
+<!-- ================= PAGE 4 ================= -->
 
 <section class="page" id="page4">
 
-<div class="confetti"
-style="left:8%;animation-delay:0s">
-🎉
-</div>
-
-<div class="confetti"
-style="left:25%;animation-delay:1s">
-✨
-</div>
-
-<div class="confetti"
-style="left:43%;animation-delay:2s">
-🎊
-</div>
-
-<div class="confetti"
-style="left:62%;animation-delay:.5s">
-💗
-</div>
-
-<div class="confetti"
-style="left:80%;animation-delay:1.5s">
-🌸
-</div>
-
-<div class="confetti"
-style="left:94%;animation-delay:2.5s">
-🎉
-</div>
+<div class="confetti" style="left:8%;animation-delay:0s">🎉</div>
+<div class="confetti" style="left:22%;animation-delay:1s">✨</div>
+<div class="confetti" style="left:40%;animation-delay:2s">🌸</div>
+<div class="confetti" style="left:58%;animation-delay:.5s">🎊</div>
+<div class="confetti" style="left:76%;animation-delay:1.5s">💗</div>
+<div class="confetti" style="left:92%;animation-delay:2.5s">🎉</div>
 
 
 <div class="card">
 
-<div class="subtitle">
-Plot twist 🎀
+<div class="small">
+Plot twist ♡
 </div>
 
 <div class="cake">
@@ -642,12 +751,12 @@ Plot twist 🎀
 </div>
 
 <h1>
-It's your birthday too! 🥹
+It's your birthday! 🥹
 </h1>
 
 <p>
-So today is officially a
-<b>double celebration!</b> 🎉
+And because it's also Teachers' Day,
+today deserves a <b>double celebration!</b> 🎉
 </p>
 
 <br>
@@ -656,14 +765,14 @@ So today is officially a
 Happy Birthday, Prerna Didi! 💗
 <br><br>
 
-May you always have reasons to smile,
-lots of happiness around you,
-and obviously... lots and lots of cake! 🎂
+May your day be filled with
+beautiful moments, endless smiles,
+peace, happiness and obviously...
+a LOT of cake! 🎂🌷
 </p>
 
-
 <button onclick="nextPage()">
-One final message 💌
+One final message ♡
 </button>
 
 </div>
@@ -672,20 +781,19 @@ One final message 💌
 
 
 
-<!-- PAGE 5 -->
+<!-- ================= PAGE 5 ================= -->
 
 <section class="page" id="page5">
 
 <div class="card">
 
 <div class="big-heart">
-💗
+♡
 </div>
 
-<div class="subtitle">
-From the heart
+<div class="small">
+With lots of respect
 </div>
-
 
 <h1>
 Happy Teachers' Day
@@ -697,31 +805,24 @@ Happy Teachers' Day
 Prerna Didi! 🎂
 </h2>
 
-
-<p>
-Thank you for being such a wonderful
-teacher and such a sweet Didi. 🌷
-</p>
-
-<br>
-
 <p>
 Thank you for your patience,
 your guidance,
-and for always helping me
-when I get stuck. ❤️
+your kindness,
+and for always encouraging me
+to keep trying. 🌷
 </p>
 
 <br>
 
 <p>
-Stay happy, keep smiling,
-and keep inspiring. ✨
+I hope you always keep smiling
+and have countless reasons
+to be happy. 💗
 </p>
 
-
 <div class="signature">
-Made with lots of love & respect 🌸
+Made especially for you ♡
 </div>
 
 </div>
@@ -736,18 +837,18 @@ Made with lots of love & respect 🌸
 let currentPage = 1;
 
 
+/* PAGE CHANGE */
+
 function goToPage(number){
 
 document.getElementById(
-"page" + currentPage
+"page"+currentPage
 ).classList.remove("active");
-
 
 currentPage = number;
 
-
 document.getElementById(
-"page" + currentPage
+"page"+currentPage
 ).classList.add("active");
 
 }
@@ -756,7 +857,6 @@ document.getElementById(
 function nextPage(){
 
 goToPage(currentPage + 1);
-
 
 if(currentPage === 2){
 
@@ -767,20 +867,20 @@ startTyping();
 }
 
 
-let envelopeOpened = false;
 
+/* ENVELOPE */
+
+let opened = false;
 
 function openEnvelope(){
 
-if(envelopeOpened) return;
+if(opened) return;
 
-envelopeOpened = true;
+opened = true;
 
-
-document.getElementById(
-"envelope"
-).classList.add("open");
-
+document
+.getElementById("envelope")
+.classList.add("open");
 
 setTimeout(function(){
 
@@ -794,11 +894,9 @@ startTyping();
 
 
 
-/* TYPING LETTER */
-
+/* TYPING EFFECT */
 
 let typed = false;
-
 
 function startTyping(){
 
@@ -807,22 +905,21 @@ if(typed) return;
 typed = true;
 
 
-const text = `Didi, thank you for always being so patient with me. ❤️
+const text = `Didi, thank you for always being so patient with me. ♡
 
-Thank you for explaining things again and again whenever I get confused, and for always encouraging me to keep trying.
+Thank you for explaining things again whenever I get confused, and for always encouraging me to keep trying.
 
-You are not just someone who teaches me — you are someone who makes studying feel a little easier and a lot less scary. 🌷
+Your kindness and the way you guide me genuinely mean a lot. 🌷
 
-And since today is both Teachers' Day AND your birthday, I couldn't let the day pass without making a tiny surprise for you.
+And since today is not just Teachers' Day but also your birthday, I wanted to make this tiny little surprise for you.
 
-You deserve lots of happiness, smiles and beautiful moments today and always. 💗`;
-
-
-const box =
-document.getElementById("typing");
+I hope today brings you as much happiness as you bring to the people around you. 💗`;
 
 
 let i = 0;
+
+const box =
+document.getElementById("typing");
 
 
 function type(){
@@ -833,8 +930,7 @@ if(text[i] === "\n"){
 
 box.innerHTML += "<br>";
 
-}
-else{
+}else{
 
 box.innerHTML += text[i];
 
@@ -857,20 +953,23 @@ type();
 
 /* BALLOONS */
 
-
 function popBalloon(balloon,text){
 
 balloon.classList.add("pop");
 
+setTimeout(function(){
+
+balloon.style.display="none";
+
+},350);
+
 
 const message =
-document.getElementById("balloonMessage");
+document.getElementById("message");
 
+message.style.display="block";
 
-message.style.display = "block";
-
-
-message.innerHTML = text;
+message.innerHTML=text;
 
 }
 
